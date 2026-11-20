@@ -1,0 +1,1167 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Álvaro Martínez Hidalgo</title><style>:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color-scheme: dark;
+  color: #e7eaf0;
+  background: #0d1016;
+  --accent: #73d6ae;
+  --surface: #161b24;
+  --border: #2a3240;
+  --muted: #a8b2c3;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: var(--accent);
+}
+button {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 7px 11px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 600;
+  min-height: 36px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #9cebc9;
+  outline-offset: 3px;
+}
+input,
+select,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #10151d;
+  color: #e7eaf0;
+  padding: 8px 10px;
+  width: 100%;
+  min-width: 0;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #919db0;
+}
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23b9c4d5' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 32px;
+}
+textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #c5cddb;
+}
+small,
+.muted {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.primary {
+  background: var(--accent);
+  color: #10251d;
+}
+.primary:hover {
+  background: #96e6c4;
+}
+.quiet {
+  background: #1d2430;
+  color: #d3dbe7;
+  border-color: var(--border);
+}
+.quiet:hover {
+  background: #283242;
+}
+.danger {
+  color: #ffb7b7;
+  background: #3b232b;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.studio-bar {
+  margin: 14px 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #131821;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-size: 1.125rem;
+  letter-spacing: -0.03em;
+  font-weight: 750;
+}
+.brand span {
+  color: var(--accent);
+}
+.studio-bar p {
+  margin: 1px 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.studio-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.status {
+  padding: 10px 24px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  min-height: 40px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 246px minmax(0, 1fr);
+  gap: 24px;
+  padding: 0 18px 24px;
+  align-items: start;
+}
+.sidebar {
+  padding: 18px;
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: #131821;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  scrollbar-width: thin;
+}
+.sidebar h2 {
+  font-size: 0.875rem;
+  margin: 0 0 14px;
+  color: #f1f3f7;
+}
+.sidebar section {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+.sidebar label {
+  margin-bottom: 12px;
+}
+.sidebar button {
+  width: 100%;
+  margin-top: 4px;
+}
+.sidebar p {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.check input {
+  width: auto;
+  accent-color: var(--accent);
+}
+.catalog {
+  width: 100%;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 6px;
+  min-width: 0;
+}
+.catalog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+}
+.catalog-top .quiet {
+  background: transparent;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  padding: 20px 0 24px;
+  align-items: center;
+}
+.hero .eyebrow {
+  display: none;
+}
+.hero h1 {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin: 0 0 10px;
+  overflow-wrap: anywhere;
+}
+.intro {
+  font-size: 1rem;
+  max-width: 72ch;
+  color: var(--muted);
+  white-space: pre-line;
+  margin: 0 0 10px;
+}
+.hero-stamp {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.hero-number {
+  font-size: 1rem;
+  font-weight: 650;
+  color: #eef2f7;
+}
+.filter-bar {
+  display: grid;
+  grid-template-columns: minmax(160px, 1.7fr) 1fr 1fr;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.filter-bar label {
+  font-size: 0.875rem;
+}
+.result-count {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 16px 0 12px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 265px), 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+.project-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease;
+}
+.project-card:hover {
+  border-color: #566579;
+}
+.cover {
+  height: 104px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    115deg,
+    hsl(var(--hue, 220) 22% 18%),
+    hsl(var(--hue, 220) 25% 26%)
+  );
+  color: #eef1f7;
+  isolation: isolate;
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  border: 24px solid #ffffff08;
+  border-radius: 50%;
+  right: -28px;
+  top: -55px;
+  z-index: -1;
+}
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.monogram {
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+  color: #ffffffd9;
+}
+.cover-category {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cover-name {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  font-size: 0.75rem;
+  color: #d8dfeb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  min-height: 22px;
+  align-items: start;
+}
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  background: #252d3b;
+  color: #becbdd;
+  border-radius: 4px;
+}
+.badge.accent {
+  background: #203b31;
+  color: #8ee1b9;
+}
+.card-body h2 {
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  margin: 10px 0 8px;
+  overflow-wrap: anywhere;
+  min-height: 2.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #acb8ca;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3em;
+  margin: 0 0 14px;
+}
+.metadata {
+  font-size: 0.75rem;
+  color: #9ca9bd;
+  margin: auto 0 12px;
+  padding-top: 2px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.link-button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 7px 0;
+}
+.link-button:hover {
+  text-decoration: underline;
+}
+.project-card .actions {
+  border-top: 1px solid var(--border);
+  padding-top: 11px;
+  gap: 9px;
+}
+.project-card .actions .primary {
+  background: #252f3e;
+  color: #e4eaf2;
+  border-color: #39465a;
+}
+.project-card .actions .primary:hover {
+  background: #344257;
+}
+.badges .quiet {
+  background: transparent;
+  border: 0;
+  margin-left: auto;
+  padding: 0 2px;
+  min-height: 22px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.catalog-footer {
+  margin-top: 28px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.is-hidden {
+  opacity: 0.65;
+  border-style: dashed;
+}
+.empty {
+  padding: 24px;
+}
+.detail-dialog,
+.editor-dialog {
+  background: #161c26;
+  border: 1px solid #465269;
+  border-radius: 12px;
+  padding: 24px;
+  width: min(700px, 94vw);
+  max-height: 90vh;
+  color: #e7eaf0;
+}
+.detail-dialog::backdrop,
+.editor-dialog::backdrop {
+  background: #000a;
+}
+.detail-dialog .cover {
+  margin-top: 18px;
+  height: 180px;
+  border-radius: 8px;
+}
+.detail-dialog .monogram {
+  top: 42px;
+  font-size: 4rem;
+}
+.detail-dialog h2 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.detail-copy {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #c3ccda;
+}
+.close {
+  display: block;
+  margin-left: auto;
+}
+.editor-dialog label {
+  margin-bottom: 14px;
+}
+.editor-dialog h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+.editor-dialog .pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.editor-dialog .actions {
+  position: sticky;
+  bottom: -24px;
+  background: #161c26;
+  padding: 16px 0;
+}
+.public .catalog {
+  max-width: 1440px;
+  padding: 26px 32px;
+}
+.layout-editorial .project-grid {
+  grid-template-columns: 1fr;
+}
+.layout-editorial .project-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
+.layout-editorial .cover {
+  height: 100%;
+  min-height: 180px;
+}
+.layout-editorial .card-body h2 {
+  min-height: 0;
+}
+.layout-editorial .card-description {
+  min-height: 0;
+}
+.preview-mode .sidebar {
+  display: none;
+}
+.preview-mode .workspace {
+  grid-template-columns: 1fr;
+}
+.preview-mode .catalog {
+  max-width: 1380px;
+}
+@media (max-width: 1050px) {
+  .workspace {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .sidebar {
+    padding: 14px;
+  }
+  .filter-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .filter-bar label:first-child {
+    grid-column: 1 / -1;
+  }
+  .hero-stamp {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .workspace {
+    display: block;
+    padding: 0 12px 18px;
+  }
+  .sidebar {
+    position: static;
+    max-height: none;
+    margin-bottom: 24px;
+  }
+  .studio-bar {
+    margin: 10px 12px 0;
+    padding: 12px;
+  }
+  .status {
+    padding-inline: 16px;
+  }
+  .catalog,
+  .public .catalog {
+    padding: 16px 4px;
+  }
+  .public .catalog {
+    padding: 18px 16px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 16px 0 20px;
+  }
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .layout-editorial .project-card {
+    display: flex;
+  }
+  .layout-editorial .cover {
+    height: 104px;
+    min-height: 0;
+  }
+  .editor-dialog .pair {
+    grid-template-columns: 1fr;
+  }
+  .catalog-top .eyebrow {
+    letter-spacing: 0.03em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+}
+</style><body class="public"><main id="catalog"></main><script id="project" type="application/json">{"schema":1,"owner":"eligeunaweb","fetchedAt":"2026-11-20T12:59:23.085Z","profile":{"name":"Álvaro","bio":""},"settings":{"title":"Álvaro Martínez Hidalgo","intro":"Herramientas y proyectos de desarrollo. Explora las aplicaciones, consulta su código y descubre en qué estoy trabajando.","layout":"grid","language":"es","accent":"#3b55e8"},"repos":[{"id":1434391068,"name":"accesspilot-ai","full_name":"eligeunaweb/accesspilot-ai","description":"","language":"JavaScript","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-26T13:04:13Z","archived":false,"fork":false,"license":"MIT"},{"id":1379516387,"name":"eligeunaweb","full_name":"eligeunaweb/eligeunaweb","description":"","language":"","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-16T12:10:45Z","archived":false,"fork":false,"license":""},{"id":1379543769,"name":"eu2673-withdrawal-button","full_name":"eligeunaweb/eu2673-withdrawal-button","description":"","language":"PHP","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-23T10:18:44Z","archived":false,"fork":false,"license":"NOASSERTION"},{"id":1186011689,"name":"executive_dashboard","full_name":"eligeunaweb/executive_dashboard","description":"“Versión gratuita del módulo Executive Dashboard para Odoo.”","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-01T18:33:43Z","archived":false,"fork":false,"license":""},{"id":1408753823,"name":"intent-flow","full_name":"eligeunaweb/intent-flow","description":"","language":"JavaScript","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-14T11:05:25Z","archived":false,"fork":false,"license":""},{"id":1465396911,"name":"odoo-backend-appearance","full_name":"eligeunaweb/odoo-backend-appearance","description":"","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-11-20T12:22:15Z","archived":false,"fork":false,"license":"LGPL-3.0"},{"id":1379824405,"name":"odoo-sysadmin-server-management","full_name":"eligeunaweb/odoo-sysadmin-server-management","description":"","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-09-22T07:09:24Z","archived":false,"fork":false,"license":""},{"id":1434266594,"name":"open-skills-hub","full_name":"eligeunaweb/open-skills-hub","description":"","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-26T11:06:48Z","archived":false,"fork":false,"license":"MIT"},{"id":1311448672,"name":"PROYECTO-FINAL-MUSK","full_name":"eligeunaweb/PROYECTO-FINAL-MUSK","description":"Alumno Álvaro Martínez Hidalgo","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-09-21T11:02:05Z","archived":false,"fork":true,"license":""},{"id":1434203177,"name":"repomedic","full_name":"eligeunaweb/repomedic","description":"","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-26T10:14:11Z","archived":false,"fork":false,"license":"MIT"},{"id":1434343573,"name":"sentinelwp-ai","full_name":"eligeunaweb/sentinelwp-ai","description":"","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-10-26T12:22:02Z","archived":false,"fork":false,"license":"MIT"},{"id":1462815786,"name":"wp-plugin-watch","full_name":"eligeunaweb/wp-plugin-watch","description":"","language":"Python","topics":[],"homepage":"","stars":0,"updated_at":"2026-11-18T13:13:13Z","archived":false,"fork":false,"license":"MIT"}],"edits":{"1462815786":{"title":"WP Plugin Watch","description":"Un explorador de plugins de WordPress con filtros y datos sobre su actividad de mantenimiento. Disponible en español e inglés.","category":"WordPress","demo":"https://eligeunaweb.github.io/wp-plugin-watch/","featured":true},"1465396911":{"title":"Backend Appearance for Odoo","description":"Un módulo para personalizar la apariencia del gestor de Odoo Community. Consulta las versiones compatibles y las instrucciones en el repositorio.","category":"Odoo","featured":true}}}</script><script>(function (root, factory) {
+  const api = factory();
+  if (typeof module === "object" && module.exports) module.exports = api;
+  else root.RepoCanvas = api;
+})(globalThis, function () {
+  "use strict";
+  const USER = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i;
+  const text = (v, n = 300) => (typeof v === "string" ? v.slice(0, n) : "");
+  function url(v) {
+    if (!v) return "";
+    try {
+      const u = new URL(v);
+      return ["https:", "http:"].includes(u.protocol) &&
+        !u.username &&
+        !u.password
+        ? u.href
+        : "";
+    } catch {
+      return "";
+    }
+  }
+  function image(v) {
+    return typeof v === "string" &&
+      v.length <= 2800000 &&
+      /^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+=*$/.test(v)
+      ? v
+      : "";
+  }
+  function repo(r) {
+    if (!r || !Number.isSafeInteger(r.id) || r.id < 1 || r.private === true)
+      throw Error("Invalid public repository");
+    const full = text(r.full_name, 150);
+    if (!/^[\w.-]+\/[\w.-]+$/.test(full))
+      throw Error("Invalid repository name");
+    return {
+      id: r.id,
+      name: text(r.name, 100),
+      full_name: full,
+      description: text(r.description, 2000),
+      language: text(r.language, 60),
+      topics: Array.isArray(r.topics)
+        ? r.topics
+            .filter((x) => typeof x === "string")
+            .slice(0, 30)
+            .map((x) => text(x, 50))
+        : [],
+      homepage: url(r.homepage),
+      stars: Number.isSafeInteger(r.stargazers_count)
+        ? Math.max(0, r.stargazers_count)
+        : Number.isSafeInteger(r.stars)
+          ? Math.max(0, r.stars)
+          : 0,
+      updated_at: text(r.updated_at, 40),
+      archived: r.archived === true,
+      fork: r.fork === true,
+      license: text(
+        typeof r.license === "object" ? r.license?.spdx_id : r.license,
+        60,
+      ),
+    };
+  }
+  function edit(v = {}) {
+    const e = {};
+    for (const [k, n] of Object.entries({
+      title: 150,
+      description: 3000,
+      category: 60,
+    }))
+      if (typeof v[k] === "string") e[k] = text(v[k], n);
+    for (const k of ["demo", "download"])
+      if (typeof v[k] === "string") {
+        const u = url(v[k]);
+        if (v[k] && !u) throw Error("Invalid link: " + k);
+        e[k] = u;
+      }
+    if (v.image) {
+      e.image = image(v.image);
+      if (!e.image) throw Error("Invalid image");
+    }
+    for (const k of ["hidden", "featured"])
+      if (typeof v[k] === "boolean") e[k] = v[k];
+    return e;
+  }
+  function validate(p) {
+    if (
+      !p ||
+      p.schema !== 1 ||
+      typeof p.owner !== "string" ||
+      !USER.test(p.owner) ||
+      !Array.isArray(p.repos) ||
+      p.repos.length > 1000
+    )
+      throw Error("Invalid project configuration");
+    const repos = p.repos.map(repo);
+    if (new Set(repos.map((r) => r.id)).size !== repos.length)
+      throw Error("Duplicate repository");
+    if (
+      repos.some(
+        (r) =>
+          r.full_name.split("/")[0].toLowerCase() !== p.owner.toLowerCase(),
+      )
+    )
+      throw Error("Repository owner mismatch");
+    if (Object.keys(p.edits || {}).length > 2000)
+      throw Error("Too many customizations");
+    const edits = {};
+    for (const [id, v] of Object.entries(p.edits || {})) {
+      if (!/^[1-9]\d*$/.test(id) || !v || typeof v !== "object")
+        throw Error("Invalid customization");
+      edits[id] = edit(v);
+    }
+    return {
+      schema: 1,
+      owner: p.owner.toLowerCase(),
+      fetchedAt: text(p.fetchedAt, 40),
+      profile: {
+        name: text(p.profile?.name, 100),
+        bio: text(p.profile?.bio, 2000),
+      },
+      settings: {
+        title: text(p.settings?.title, 100),
+        intro: text(p.settings?.intro, 2000),
+        layout: ["grid", "editorial"].includes(p.settings?.layout)
+          ? p.settings.layout
+          : "grid",
+        language: p.settings?.language === "en" ? "en" : "es",
+        accent: /^#[0-9a-f]{6}$/i.test(p.settings?.accent)
+          ? p.settings.accent
+          : "#3b55e8",
+      },
+      repos,
+      edits,
+    };
+  }
+  function merge(
+    previous,
+    owner,
+    profile,
+    repos,
+    now = new Date().toISOString(),
+  ) {
+    if (previous && previous.owner.toLowerCase() !== owner.toLowerCase())
+      throw Error("Different owner: create a new project");
+    return validate({
+      schema: 1,
+      owner,
+      profile: { name: profile.name || profile.login, bio: profile.bio || "" },
+      repos,
+      fetchedAt: now,
+      settings: previous?.settings || {},
+      edits: previous?.edits || {},
+    });
+  }
+  function cards(p, includeHidden = false) {
+    return p.repos
+      .map((r) => {
+        const e = p.edits[String(r.id)] || {};
+        return {
+          ...r,
+          ...e,
+          title: e.title || r.name,
+          description: e.description ?? r.description,
+          category: e.category || r.language || "Other",
+          demo: e.demo ?? r.homepage,
+          download: e.download || "",
+          image: e.image || "",
+          source: "https://github.com/" + r.full_name,
+        };
+      })
+      .filter((r) => includeHidden || !r.hidden);
+  }
+  function select(
+    p,
+    {
+      search = "",
+      category = "",
+      sort = "featured",
+      includeHidden = false,
+    } = {},
+  ) {
+    const q = search.toLocaleLowerCase().trim();
+    return cards(p, includeHidden)
+      .filter(
+        (r) =>
+          (!category || r.category === category) &&
+          (!q ||
+            [r.title, r.name, r.description, r.category, ...r.topics]
+              .join(" ")
+              .toLocaleLowerCase()
+              .includes(q)),
+      )
+      .sort((a, b) => {
+        let n =
+          sort === "name"
+            ? a.title.localeCompare(b.title)
+            : sort === "updated"
+              ? b.updated_at.localeCompare(a.updated_at)
+              : sort === "stars"
+                ? b.stars - a.stars
+                : Number(!!b.featured) - Number(!!a.featured);
+        return n || a.title.localeCompare(b.title);
+      });
+  }
+  async function github(owner, fetcher = fetch) {
+    if (!USER.test(owner)) throw Error("Invalid GitHub username");
+    async function get(path) {
+      const response = await fetcher("https://api.github.com" + path, {
+        headers: { Accept: "application/vnd.github+json" },
+        signal: AbortSignal.timeout(20000),
+        credentials: "omit",
+        redirect: "error",
+      });
+      if (!response.ok)
+        throw Error(
+          response.status === 403 || response.status === 429
+            ? "GitHub rate limit. Try again later."
+            : `GitHub HTTP ${response.status}`,
+        );
+      const raw = await response.text();
+      if (raw.length > 8000000) throw Error("GitHub response too large");
+      return JSON.parse(raw);
+    }
+    const profile = await get("/users/" + owner);
+    let repos = [];
+    for (let page = 1; page <= 10; page++) {
+      const rows = await get(
+        `/users/${owner}/repos?type=owner&per_page=100&page=${page}&sort=full_name`,
+      );
+      if (!Array.isArray(rows)) throw Error("Invalid GitHub response");
+      repos.push(...rows);
+      if (rows.length < 100) return { profile, repos };
+    }
+    throw Error(
+      "More than 999 repositories: import cancelled to avoid an incomplete catalogue",
+    );
+  }
+  function esc(s) {
+    return String(s ?? "").replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
+  }
+  function publicProject(p) {
+    const out = validate(p);
+    out.repos = out.repos.filter((r) => !out.edits[r.id]?.hidden);
+    const ids = new Set(out.repos.map((r) => String(r.id)));
+    out.edits = Object.fromEntries(
+      Object.entries(out.edits).filter(([id]) => ids.has(id)),
+    );
+    return out;
+  }
+  return {
+    USER,
+    url,
+    image,
+    repo,
+    edit,
+    validate,
+    merge,
+    cards,
+    select,
+    github,
+    publicProject,
+    esc,
+  };
+});
+</script><script>(function () {
+  "use strict";
+  const C = globalThis.RepoCanvas;
+  const words = {
+    es: {
+      projects: "Proyectos",
+      search: "Buscar proyectos",
+      all: "Todas las categorías",
+      featured: "Destacados primero",
+      name: "Nombre",
+      updated: "Actualización",
+      stars: "Estrellas",
+      details: "Ver proyecto",
+      source: "Código",
+      demo: "Probar",
+      download: "Descargar",
+      close: "Cerrar",
+      empty: "No hay proyectos con estos filtros.",
+      count: "proyectos",
+      snapshot: "Datos de GitHub consultados",
+      archive: "Archivado",
+      fork: "Fork",
+      license: "Licencia",
+      edit: "Editar ficha",
+      hidden: "Oculto",
+      featuredTag: "Destacado",
+      visit: "Perfil en GitHub",
+      sort: "Ordenar",
+      cover: "Portada de",
+    },
+    en: {
+      projects: "Projects",
+      search: "Search projects",
+      all: "All categories",
+      featured: "Featured first",
+      name: "Name",
+      updated: "Last updated",
+      stars: "Stars",
+      details: "View project",
+      source: "Source",
+      demo: "Try it",
+      download: "Download",
+      close: "Close",
+      empty: "No projects match these filters.",
+      count: "projects",
+      snapshot: "GitHub data checked",
+      archive: "Archived",
+      fork: "Fork",
+      license: "License",
+      edit: "Edit project",
+      hidden: "Hidden",
+      featuredTag: "Featured",
+      visit: "GitHub profile",
+      sort: "Sort by",
+      cover: "Cover for",
+    },
+  };
+  function el(tag, text, cls) {
+    const n = document.createElement(tag);
+    if (text !== undefined) n.textContent = text;
+    if (cls) n.className = cls;
+    return n;
+  }
+  function link(text, url) {
+    const a = el("a", text, "link-button");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    return a;
+  }
+  function art(r, w) {
+    const box = el("div", undefined, "cover");
+    box.style.setProperty(
+      "--hue",
+      String([...r.name].reduce((a, c) => a + c.charCodeAt(0), 0) % 360),
+    );
+    if (r.image) {
+      const i = el("img");
+      i.src = r.image;
+      i.alt = w.cover + " " + r.title;
+      i.loading = "lazy";
+      box.append(i);
+    } else {
+      const mark = el("span", r.title.slice(0, 2).toUpperCase(), "monogram");
+      mark.setAttribute("aria-hidden", "true");
+      box.append(
+        el("span", r.category, "cover-category"),
+        mark,
+        el("span", r.name, "cover-name"),
+      );
+    }
+    return box;
+  }
+  function mount(host, project, { onEdit, includeHidden = false } = {}) {
+    const p = C.validate(project);
+    let lang = p.settings.language,
+      q = "",
+      category = "",
+      sort = "featured";
+    host.lang = lang;
+    if (document.body.classList.contains("public"))
+      document.documentElement.lang = lang;
+    host.replaceChildren();
+    host.className = "catalog layout-" + p.settings.layout;
+    const top = el("div", undefined, "catalog-top");
+    top.append(el("span", "REPOCANVAS / " + p.owner, "eyebrow"));
+    const language = el(
+      "button",
+      lang === "es" ? "English" : "Español",
+      "quiet",
+    );
+    top.append(language);
+    host.append(top);
+    const hero = el("header", undefined, "hero");
+    const titles = el("div");
+    titles.append(
+      el("p", "GITHUB PORTFOLIO", "eyebrow"),
+      el("h1", p.settings.title || p.profile.name || p.owner),
+    );
+    const intro = p.settings.intro || p.profile.bio;
+    if (intro) titles.append(el("p", intro, "intro"));
+    const profile = link(words[lang].visit, "https://github.com/" + p.owner);
+    titles.append(profile);
+    hero.append(titles);
+    const stamp = el("div", undefined, "hero-stamp");
+    stamp.append(
+      el("span", String(C.cards(p, includeHidden).length), "hero-number"),
+      el("span", words[lang].projects),
+    );
+    hero.append(stamp);
+    host.append(hero);
+    const bar = el("section", undefined, "filter-bar");
+    const searchLabel = el("label", words[lang].search);
+    const search = el("input");
+    search.type = "search";
+    search.placeholder = words[lang].search;
+    searchLabel.append(search);
+    const catLabel = el("label", words[lang].all);
+    const cat = el("select");
+    function option(s, v, t) {
+      const o = el("option", t);
+      o.value = v;
+      s.append(o);
+    }
+    option(cat, "", words[lang].all);
+    [...new Set(C.cards(p, includeHidden).map((r) => r.category))]
+      .sort()
+      .forEach((c) => option(cat, c, c));
+    catLabel.append(cat);
+    const sortLabel = el("label", words[lang].sort),
+      sorting = el("select");
+    for (const k of ["featured", "updated", "name", "stars"])
+      option(sorting, k, words[lang][k]);
+    sortLabel.append(sorting);
+    bar.append(searchLabel, catLabel, sortLabel);
+    host.append(bar);
+    const count = el("p", "", "result-count");
+    count.setAttribute("role", "status");
+    host.append(count);
+    const grid = el("div", undefined, "project-grid");
+    host.append(grid);
+    const footer = el(
+      "footer",
+      words[lang].snapshot + ": " + (p.fetchedAt || "—"),
+      "catalog-footer",
+    );
+    host.append(footer);
+    const modal = el("dialog", undefined, "detail-dialog");
+    modal.setAttribute("aria-label", words[lang].details);
+    host.append(modal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.close();
+    });
+    function details(r) {
+      const w = words[lang];
+      modal.replaceChildren();
+      const close = el("button", w.close, "quiet close");
+      close.onclick = () => modal.close();
+      modal.append(
+        close,
+        art(r, w),
+        el("h2", r.title),
+        el("p", r.description || r.name, "detail-copy"),
+        el("p", r.full_name, "muted"),
+      );
+      const meta = el(
+        "p",
+        [
+          r.language,
+          r.license && w.license + ": " + r.license,
+          r.updated_at.slice(0, 10),
+        ]
+          .filter(Boolean)
+          .join(" · "),
+        "muted",
+      );
+      modal.append(meta);
+      const links = el("div", undefined, "actions");
+      links.append(link(w.source, r.source));
+      if (r.demo) links.append(link(w.demo, r.demo));
+      if (r.download) links.append(link(w.download, r.download));
+      modal.append(links);
+      modal.showModal();
+    }
+    function render() {
+      const w = words[lang],
+        rows = C.select(p, { search: q, category, sort, includeHidden });
+      grid.replaceChildren();
+      count.textContent = rows.length + " " + w.count;
+      for (const r of rows) {
+        const card = el(
+          "article",
+          undefined,
+          "project-card" + (r.hidden ? " is-hidden" : ""),
+        );
+        card.dataset.id = String(r.id);
+        const cover = art(r, w);
+        card.append(cover);
+        const body = el("div", undefined, "card-body");
+        const badges = el("div", undefined, "badges");
+        badges.append(el("span", r.category, "badge"));
+        if (r.featured)
+          badges.append(el("span", w.featuredTag, "badge accent"));
+        if (r.hidden) badges.append(el("span", w.hidden, "badge"));
+        if (r.archived) badges.append(el("span", w.archive, "badge"));
+        if (r.fork) badges.append(el("span", w.fork, "badge"));
+        body.append(
+          badges,
+          el("h2", r.title),
+          el("p", r.description || r.name, "card-description"),
+        );
+        const meta = el(
+          "p",
+          r.stars +
+            " " +
+            w.stars.toLowerCase() +
+            " · " +
+            r.updated_at.slice(0, 10),
+          "metadata",
+        );
+        body.append(meta);
+        const actions = el("div", undefined, "actions");
+        const more = el("button", w.details, "primary");
+        more.onclick = () => details(r);
+        actions.append(more, link(w.source, r.source));
+        if (onEdit) {
+          const edit = el("button", w.edit, "quiet");
+          edit.onclick = () => onEdit(r.id);
+          badges.append(edit);
+        }
+        body.append(actions);
+        card.append(body);
+        grid.append(card);
+      }
+      if (!rows.length) grid.append(el("p", w.empty, "empty"));
+    }
+    search.oninput = () => {
+      q = search.value;
+      render();
+    };
+    cat.onchange = () => {
+      category = cat.value;
+      render();
+    };
+    sorting.onchange = () => {
+      sort = sorting.value;
+      render();
+    };
+    language.onclick = () => {
+      const next = C.validate(p);
+      next.settings.language = lang === "es" ? "en" : "es";
+      mount(host, next, { onEdit, includeHidden });
+    };
+    render();
+  }
+  globalThis.RepoCanvasView = { mount };
+})();
+</script><script>RepoCanvasView.mount(document.getElementById('catalog'),JSON.parse(document.getElementById('project').textContent));</script></body></html>
